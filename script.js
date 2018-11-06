@@ -1,11 +1,15 @@
-// own forEach
+const numbers = [1, 2, 3, 4, 5, 6]
 
-Array.prototype.myOwn = function(callback) {
-    const arr = []
-    for (let i = 0; i < this.length; i++) {
-      arr.push(callback(this[i], i, this))
+function myOwnForEach(arr, func, thisArg) {
+
+    for (let i = 0; i < arr.length; i++) {
+        func.call(thisArg ,arr[i], i, arr)
     }
-    return arr
+    
+
 }
 
-const arr = [1,2,3,4]
+myOwnForEach(numbers,
+     function (e) {
+        console.log(e, this)
+}, {whatever: 'ever'})
