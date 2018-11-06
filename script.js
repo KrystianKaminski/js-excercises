@@ -1,15 +1,15 @@
 const numbers = [1, 2, 3, 4, 5, 6]
 
-function myOwnForEach(arr, func, thisArg) {
+Array.prototype.myOwnForEach = function(func) {
 
-    for (let i = 0; i < arr.length; i++) {
-        func.call(thisArg ,arr[i], i, arr)
+    for (let i = 0; i < this.length; i++) {
+        func (this[i], i, this)
     }
     
 
 }
 
-myOwnForEach(numbers,
-     function (e) {
-        console.log(e, this)
-}, {whatever: 'ever'})
+// myOwnForEach(numbers,
+//      function (e) {
+//         console.log(e, this)
+// }, {whatever: 'ever'})
