@@ -1,17 +1,8 @@
-const up = function from1To10(i) {
-    console.log(i)
-
-    if (i < 10) from1To10(++i)
+function callWith5and3 (func) {
+   return func(5, 3)
 }
 
+console.log(callWith5and3((a, b) => a + b)) // 8
 
-up(1)
 
 
-const down = function from10To1(i) {
-    console.log(i)
-
-    if (i > 0) from10To1(--i)
-}
-
-down(10)
