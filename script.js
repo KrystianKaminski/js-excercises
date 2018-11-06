@@ -1,8 +1,10 @@
-function callWith5and3 (func) {
-   return func(5, 3)
+function call10Times (func) {
+    for (let i = 0 ; i < 10; i++) {
+        func('bu')
+    }
 }
 
-console.log(callWith5and3((a, b) => a + b)) // 8
+call10Times(console.log) // 10 times 'BU' in console
 
 
 
